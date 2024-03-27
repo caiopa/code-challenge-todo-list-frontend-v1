@@ -9,9 +9,7 @@ function Header() {
     <HeaderContainer>
       <S.FlexContainer justify="space-evenly">
         <TitleComponent title="Welcome !" />
-        <Link title="Create Todo" href="/create-todo" color="white">
-          + Add
-        </Link>
+        <Link title="+ Add" href="/create-todo" color="white"></Link>
       </S.FlexContainer>
     </HeaderContainer>
   );
