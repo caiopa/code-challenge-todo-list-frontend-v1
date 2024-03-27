@@ -1,5 +1,5 @@
 import React from 'react';
-import * as S from 'style';
+import * as S from './form-container.style';
 
 interface FormContainerProps {
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;

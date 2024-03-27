@@ -1,9 +1,9 @@
 import { TodoProps } from '@types';
-import { getAllTodos } from 'services/get-all-todos';
+import { deleteTodo, getAllTodos } from 'services/Todo-services';
 import React, { useCallback, useEffect, useState } from 'react';
-import TodoCard from './todo-card';
-import * as S from 'style';
-import { deleteTodo } from 'services/detele-todo-by-id';
+import TodoCard from '../todo-card/todo-card';
+import { TodosContainer } from '../todo-details/todos-container.style';
+
 // import { useHistory } from 'react-router-dom';
 
 function CardsContainer() {
@@ -33,7 +33,7 @@ function CardsContainer() {
   }, [allTodos]);
 
   return (
-    <S.TodosContainer>
+    <TodosContainer>
       {todos?.map((todo, index) => (
         <TodoCard
           key={index}
@@ -43,7 +43,7 @@ function CardsContainer() {
           onCLickDelete={deleteTodoById}
         />
       ))}
-    </S.TodosContainer>
+    </TodosContainer>
   );
 }
 

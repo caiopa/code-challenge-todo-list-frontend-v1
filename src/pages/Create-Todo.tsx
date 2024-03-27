@@ -1,14 +1,15 @@
-import { FormCreateTodo } from 'components/form-create-todo';
-import Title from 'components/title';
+import { FormCreateTodo } from 'components/form-create-todo/form-create-todo';
+import Title from 'components/title/title';
 import React from 'react';
 import * as S from 'style';
+import { BackLink } from '../components/link/link.style';
 export default function CreateTodoPage() {
   return (
     <S.PageContainer>
       <S.FlexContainerCenter>
-        <S.BackLink href="/" title="Back">
+        <BackLink href="/" title="Back">
           {'<<'}
-        </S.BackLink>
+        </BackLink>
         <Title title="Create Todo" />
       </S.FlexContainerCenter>
       <FormCreateTodo />

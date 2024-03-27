@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { TodoProps } from '@types';
 import * as S from 'style';
-import { getTodoById } from 'services/get-todo-by-id';
-import { deleteTodo } from 'services/detele-todo-by-id';
+import { TodosContainer } from './todos-container.style';
+import { getTodoById, deleteTodo } from 'services/Todo-services';
 import { useParams, useHistory } from 'react-router-dom';
-
-import TodoCard from './todo-card';
-import Title from './title';
+import TodoCard from '../todo-card/todo-card';
+import TitleComponent from '../title/title';
+import { BackLink } from 'components/link/link.style';
 
 export default function TodoDetails() {
   const [todo, setTodo] = useState<Partial<TodoProps>>({
@@ -41,12 +41,12 @@ export default function TodoDetails() {
   };
 
   return (
-    <S.TodosContainer>
+    <TodosContainer>
       <S.FlexContainerCenter>
-        <S.BackLink href="/" title="Back">
+        <BackLink href="/" title="Back">
           {'<<'}
-        </S.BackLink>
-        <Title title={`Details Todo: ${todo.id}`} />
+        </BackLink>
+        <TitleComponent title={`Details Todo: ${todo.id}`} />
       </S.FlexContainerCenter>
       <TodoCard
         title={todo.title || ''}
@@ -54,6 +54,6 @@ export default function TodoDetails() {
         id={id}
         onCLickDelete={deleteTodoById}
       ></TodoCard>
-    </S.TodosContainer>
+    </TodosContainer>
   );
 }

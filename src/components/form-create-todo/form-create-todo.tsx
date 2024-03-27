@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react';
 import * as S from 'style';
-import { FormContainer } from './form-container';
-import { createTodo } from '../services/post-new-todo';
+import { Button } from '../button/button.style';
+import { FormContainer } from '../form-container/form-container';
+import { createTodo } from 'services/Todo-services';
 import { useHistory } from 'react-router-dom';
 import { validateInputsTitleAndDescription } from 'helpers/validate-todo-fields';
 
@@ -39,9 +40,9 @@ export function FormCreateTodo() {
       <S.TextArea name="description" id="description" ref={descriptionRef} />
       {errorMessage && <S.ErrorMensage>{errorMessage}</S.ErrorMensage>}
 
-      <S.Button type="submit" title="Create">
+      <Button type="submit" title="Create">
         Create
-      </S.Button>
+      </Button>
     </FormContainer>
   );
 }
