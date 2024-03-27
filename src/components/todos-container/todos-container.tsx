@@ -13,7 +13,6 @@ function TodosContainer() {
     );
     if (confirmDelete) {
       await deleteTodo(id);
-      await getAllTodos();
     }
   };
 
@@ -23,7 +22,7 @@ function TodosContainer() {
       setTodos(data);
     };
     fetchTodos();
-  }, []);
+  }, [todos]);
 
   return (
     <TodoContainer>
