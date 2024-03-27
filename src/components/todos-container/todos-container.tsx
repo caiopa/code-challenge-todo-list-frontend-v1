@@ -13,6 +13,8 @@ function TodosContainer() {
     );
     if (confirmDelete) {
       await deleteTodo(id);
+      const data = await getAllTodos();
+      setTodos(data);
     }
   };
 
@@ -22,7 +24,7 @@ function TodosContainer() {
       setTodos(data);
     };
     fetchTodos();
-  }, [todos]);
+  }, []);
 
   return (
     <TodoContainer>
