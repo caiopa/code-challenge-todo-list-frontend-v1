@@ -78,16 +78,6 @@ export const TextArea = styled.textarea`
   }
 `;
 
-export const PageContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background-color: #f0f0f0;
-`;
-
 export const ErrorMensage = styled.p`
   color: red;
   font-size: 14px;

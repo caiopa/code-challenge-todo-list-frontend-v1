@@ -5,7 +5,7 @@ import * as S from 'style';
 import { BackLink } from '../components/link/link.style';
 export default function CreateTodoPage() {
   return (
-    <S.PageContainer>
+    <S.MainPage>
       <S.FlexContainerCenter>
         <BackLink href="/" title="Back">
           {'<<'}
@@ -13,6 +13,6 @@ export default function CreateTodoPage() {
         <Title title="Create Todo" />
       </S.FlexContainerCenter>
       <FormCreateTodo />
-    </S.PageContainer>
+    </S.MainPage>
   );
 }
