@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { TodoProps } from '@types';
 import * as S from 'style';
-import { TodosContainer } from './todos-container.style';
+import { TodoContainer } from '../todos-container/todos-container.style';
 import { getTodoById, deleteTodo } from 'services/Todo-services';
 import { useParams, useHistory } from 'react-router-dom';
 import TodoCard from '../todo-card/todo-card';
@@ -28,7 +28,7 @@ export default function TodoDetails() {
     getTodo();
   }, [getTodo]);
 
-  const deleteTodoById = async (id: string) => {
+  const handleDeleteTodoById = async (id: string) => {
     const confirmDelete = window.confirm(
       'Are you sure you want to delete this todo?'
     );
@@ -41,7 +41,7 @@ export default function TodoDetails() {
   };
 
   return (
-    <TodosContainer>
+    <TodoContainer>
       <S.FlexContainerCenter>
         <BackLink href="/" title="Back">
           {'<<'}
@@ -52,8 +52,8 @@ export default function TodoDetails() {
         title={todo.title || ''}
         description={todo.description || ''}
         id={id}
-        onCLickDelete={deleteTodoById}
+        onCLickDelete={handleDeleteTodoById}
       ></TodoCard>
-    </TodosContainer>
+    </TodoContainer>
   );
 }

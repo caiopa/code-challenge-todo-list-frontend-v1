@@ -1,4 +1,4 @@
-import CardsContainer from 'components/todos-container/todos-container';
+import TodosContainer from 'components/todos-container/todos-container';
 import Header from '../components/header/header';
 import React from 'react';
 import * as S from 'style';
@@ -9,7 +9,7 @@ function Home() {
     <S.MainPage>
       <Header />
       <Title title="Todos List" />
-      <CardsContainer />
+      <TodosContainer />
     </S.MainPage>
   );
 }

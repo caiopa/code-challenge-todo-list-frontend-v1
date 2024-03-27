@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const TodosContainer = styled.section`
+export const TodoContainer = styled.section`
   width: 80%;
   height: 700px;
   overflow-y: auto;

@@ -5,6 +5,7 @@ import { FormContainer } from '../form-container/form-container';
 import { createTodo } from 'services/Todo-services';
 import { useHistory } from 'react-router-dom';
 import { validateInputsTitleAndDescription } from 'helpers/validate-todo-fields';
+import { Input } from 'components/input/input';
 
 export function FormCreateTodo() {
   const titleRef = useRef<HTMLInputElement>(null);
@@ -33,7 +34,7 @@ export function FormCreateTodo() {
     <FormContainer onSubmit={handleSubmit}>
       <S.FlexContainer>
         <S.Label htmlFor="title">Title:</S.Label>
-        <S.Input type="text" name="title" id="title" ref={titleRef} />
+        <Input type="text" name="title" id="title" ref={titleRef} />
       </S.FlexContainer>
 
       <S.Label htmlFor="description">Description:</S.Label>
